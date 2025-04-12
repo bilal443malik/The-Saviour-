@@ -9,6 +9,11 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 PORT = 8001
 
+
+@app.route("/health")
+def health():
+    return "OK", 200
+
 # Function to kill processes on a specified port
 def kill_process_on_port(port):
     """Kill all processes listening on the specified port."""
